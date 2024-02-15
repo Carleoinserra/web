@@ -10,6 +10,7 @@
     <h1>
         HIT PARADE
     </h1>
+    <h3>Inserisci canzone</h3>
     <form name = "form">
         <label for="pos">posizione:</label>
         <input type="text" id="pos" name="pos"><br><br>
@@ -22,6 +23,20 @@
         <input type="text" id="anno" name="anno"><br><br>
         <input type="button" value="Submit" onclick="return ottieniDati()">
       </form>
+      <h3>Sostiuisci canzone in posizione</h3>
+      <form name = "form1">
+        <label for="pos">posizione:</label>
+        <input type="text" id="pos1" name="pos1"><br><br>
+        <label for="titolo">titolo:</label>
+        <input type="text" id="tit1" name="tit1"><br><br>
+        
+        <label for="autore">autore:</label>
+        <input type="text" id="aut1" name="aut1"><br><br>
+        <label for="pos">anno:</label>
+        <input type="text" id="anno1" name="anno1"><br><br>
+        <input type="button" value="Submit" onclick="return cambiaLista()">
+      </form>
+
       <hr>
       <input type="button" value="mostra" onclick="return stampaDati()">
       <div id = "result"></div>
