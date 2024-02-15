@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="song.js"></script>
+</head>
+<body>
+    <h1>
+        HIT PARADE
+    </h1>
+    <form name = "form">
+        <label for="pos">posizione:</label>
+        <input type="text" id="pos" name="pos"><br><br>
+        <label for="titolo">titolo:</label>
+        <input type="text" id="tit" name="tit"><br><br>
+        
+        <label for="autore">autore:</label>
+        <input type="text" id="aut" name="aut"><br><br>
+        <label for="pos">anno:</label>
+        <input type="text" id="anno" name="anno"><br><br>
+        <input type="button" value="Submit" onclick="return ottieniDati()">
+      </form>
+      <hr>
+      <input type="button" value="mostra" onclick="return stampaDati()">
+      <div id = "result"></div>
+</body>
+</html>
