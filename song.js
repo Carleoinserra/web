@@ -59,6 +59,16 @@ function ottieniDati(){
     
     
 }
+function cambiaLista(){
+    var pos = document.forms['form1']['pos1'].value;
+    var tit = document.forms['form1']['tit1'].value;
+    var can = document.forms['form1']['aut1'].value;
+    var anno = document.forms['form1']['anno1'].value;
+    var c1 = new song(pos, tit, can, anno );
+    h1.changeList(pos, c1);
+    alert("operazione effettuata corretamente");
+
+}
 
 // stampa la lista con i dati presenti
 
