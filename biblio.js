@@ -54,19 +54,30 @@ b1.addLibro(l3);
 b1.addLibro(l4);
 b1.addLibro(l5);
 b1.addLibro(l6);
+function mostraLibri(){
+    var outputDiv = document.getElementById("result");
 
-    for (var i = 0; i < b1.biblio.length; i++){
-   console.log(b1.biblio[i].stampa());
-    }
-    
-    var stringa = prompt("cerca libro da autore: ");
-    var lista = b1.cercalibroDaAutore(stringa);
-    for (var i = 0; i < lista.length; i++){
-        console.log(lista[i]); }
-    
-    
-    var stringa1 = prompt("cerca libro da anno: ");
-    var lista1 = b1.cercalibroDaAnno(stringa1);
-    for (var i = 0; i < lista1.length; i++){
-        console.log(lista1[i]); }
+// Costruiamo una stringa con il contenuto dell'array
+var outputString = "<ul>";
+for (var i = 0; i < b1.biblio.length; i++) {
+    outputString += "<li>" + b1.biblio[i].stampa() + "</li>";
+}
+outputString += "</ul>";
 
+// Inseriamo la stringa nel contenuto dell'elemento div
+outputDiv.innerHTML = outputString;
+}
+
+function ricercaAutore(){
+    var outputDiv = document.getElementById("result1");
+    var aut = document.forms['form']['autore'].value;
+    var listaAutore = b1.cercalibroDaAutore(aut);
+    var outputString = "<ul>";
+for (var i = 0; i < listaAutore.length; i++) {
+    
+    outputString += "<li>" + listaAutore[i].stampa() + "</li>";
+}
+outputString += "</ul>";
+// Inseriamo la stringa nel contenuto dell'elemento div
+outputDiv.innerHTML = outputString;
+}
