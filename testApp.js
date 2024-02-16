@@ -55,7 +55,36 @@ const server = http.createServer((req, res) => {
                 }
             });
         });
-    } else {
+    }
+else if ((req.method === 'POST' && req.url === '/mostra')){
+    const connection1 = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'Ilfoggia1',
+        database: 'mydb'
+    });
+    connection1.connect(function(err) {
+        if (err) throw err;
+        connection1.query("SELECT * FROM customers", function (err, result, fields) {
+          if (err) throw err;
+
+          // Supponendo che 'results' sia un array di risultati
+const jsonResponse = JSON.stringify(result);
+res.writeHead(200, {'Content-Type': 'application/json'});
+
+
+          
+        
+res.end(jsonResponse);
+                    
+      });});
+     
+
+
+}
+
+
+     else {
         // Altrimenti, gestisci altre richieste (ad esempio, per CSS, JavaScript, ecc.)
         // Puoi aggiungere la logica per servire altri file statici qui
     }
