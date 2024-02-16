@@ -69,13 +69,17 @@ else if ((req.method === 'POST' && req.url === '/mostra')){
           if (err) throw err;
 
           // Supponendo che 'results' sia un array di risultati
-const jsonResponse = JSON.stringify(result);
-res.writeHead(200, {'Content-Type': 'application/json'});
+// Costruire una stringa HTML che rappresenta una lista
+let htmlList = '<ul>';
+for (let i = 0; i < result.length; i++) {
+    const row = result[i];
+    htmlList += `<li>${row.name} - ${row.address}</li>`;
+}
+htmlList += '</ul>';
 
-
-          
-        
-res.end(jsonResponse);
+// Invia la lista HTML come risposta al client
+res.writeHead(200, {'Content-Type': 'text/html'});
+res.end(htmlList);
                     
       });});
      
