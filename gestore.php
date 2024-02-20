@@ -13,7 +13,7 @@ try {
         echo "<h2>Ordini</h2>";
 
         // Form per confermare/rifiutare gli ordini
-        echo "<form action='process_orders.php' method='POST'>";
+        echo "<form action='process_orders.php' method='GET'>";
 
         // Ciclo attraverso gli ordini e crea i radio button per ciascuno
         foreach ($orders as $order) {
@@ -23,9 +23,10 @@ try {
             echo "<p>Bibita: " . $order['bibita'] . "</p>";
 
             // Crea i radio button per confermare/rifiutare l'ordine
-            echo "<input type='radio' name='decision[" . $order['id'] . "]' value='Conferma'> Conferma";
-            echo "<input type='radio' name='decision[" . $order['id'] . "]' value='Rifiuta'> Rifiuta";
-            echo "<br>";
+            echo "<input type='radio' name='decision[" . $order['id'] . "]' value='" . $order['id'] . ".y'> Conferma";
+echo "<input type='radio' name='decision[" . $order['id'] . "]' value='" . $order['id'] . ".n'> Rifiuta";
+echo "<br>";
+
         }
 
         // Invia il modulo
